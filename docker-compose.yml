@@ -1,0 +1,19 @@
+version: '3'
+services:
+  selenium-grid:
+    image: selenium/standalone-chrome:beta
+    ports:
+      - 4444:4444
+      - 7900:7900
+    mem_limit: 2g
+    memswap_limit: 2g
+
+  test-runner:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    depends_on:
+      - selenium-grid
+    volumes:
+      - ./:/app
+    network_mode: host

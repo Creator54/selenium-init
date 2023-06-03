@@ -1,0 +1,26 @@
+plugins {
+    id 'java'
+}
+
+group = 'dev.creator54'
+version = '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    // This dependency is used by the application.
+    implementation 'com.google.guava:guava:31.1-jre'
+
+    // https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java
+    implementation 'org.seleniumhq.selenium:selenium-java:4.9.0'
+
+    // https://mvnrepository.com/artifact/io.github.bonigarcia/webdrivermanager
+    implementation 'io.github.bonigarcia:webdrivermanager:5.3.2'
+}
+
+task run(type: JavaExec) {
+    main = 'dev.creator54.Main'
+    classpath = sourceSets.main.runtimeClasspath
+}
