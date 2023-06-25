@@ -13,5 +13,5 @@ Usage:
 Random Joke
 
 ```joke
-What do you call a pig with three eyes? Piiig
+A quick shoutout to all of the sidewalks out there... Thanks for keeping me off the streets.
 ```
