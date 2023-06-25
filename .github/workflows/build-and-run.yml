@@ -1,0 +1,29 @@
+name: Build and Run
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build-and-run:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up JAVA
+        uses: actions/setup-java@v3
+        with:
+          distribution: 'temurin'
+          java-version: '17'
+
+      - name: Set up Docker and docker-compose
+        uses: isbang/compose-action@v1.4.1
+
+      - name: Build with Gradle
+        run: ./gradlew run
