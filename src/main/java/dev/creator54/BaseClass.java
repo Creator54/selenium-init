@@ -17,11 +17,6 @@ import java.util.Set;
 public class BaseClass {
     protected static WebDriver driver;
     protected static WebDriverWait wait;
-    protected static String binary = null, datePosted = null, location = null, jobsDataFileName = null, role=null, track=null;
-    protected static String[] roles = null, tracks = null;
-    protected static Boolean headless = null,dataAppend= null;
-    protected static Integer pageCount = null;
-    protected static Set<String> expLevels = null;
 
     protected static void setup() throws MalformedURLException {
         WebDriverManager.chromedriver ().setup ();

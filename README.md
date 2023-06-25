@@ -9,3 +9,9 @@ Usage:
 ```
 ./gradlew run
 ```
+
+Random Joke
+
+```joke
+What do you call a pig with three eyes? Piiig
+```
