@@ -13,5 +13,5 @@ Usage:
 Random Joke
 
 ```joke
-A quick shoutout to all of the sidewalks out there... Thanks for keeping me off the streets.
+How do locomotives know where they're going? Lots of training
 ```
