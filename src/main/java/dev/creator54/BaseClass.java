@@ -27,7 +27,7 @@ public class BaseClass {
         WebDriverManager.chromedriver ().setup ();
         ChromeOptions options = new ChromeOptions ();
         driver = new RemoteWebDriver (new URL ("http://localhost:4444/wd/hub"),options);
-        wait =  new WebDriverWait(driver, Duration.ofSeconds(300));
+        wait =  new WebDriverWait(driver, Duration.ofSeconds(10));
         driver.manage().window().maximize();
     }
 
@@ -35,7 +35,6 @@ public class BaseClass {
         try {
             if (!driver.getCurrentUrl().equals(url)) {
                 driver.get(url);
-                waitUntilPageLoaded();
             }
             return true;
         } catch (Exception e) {
@@ -52,18 +51,18 @@ public class BaseClass {
         wait.until(webDriver -> ((JavascriptExecutor) webDriver).executeScript("return document.readyState").equals("complete"));
     }
 
-    protected String currentURL(){
+    protected static String currentURL(){
         return driver.getCurrentUrl();
     }
-    protected WebElement findElement(By locator){
+    protected static WebElement findElement (By locator){
         wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
         return driver.findElement(locator);
     }
-    protected WebElement findElement(WebElement element, By locator){
+    protected static WebElement findElement(WebElement element, By locator){
         wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
         return element.findElement(locator);
     }
-    protected String stringFromElement(By locator){
+    protected static String stringFromElement(By locator){
         WebElement ele;
         try {
             ele = findElement (locator);
@@ -72,7 +71,7 @@ public class BaseClass {
             return "NOT FOUND";
         }
     }
-    protected String stringFromElement(WebElement element, By locator){
+    protected static String stringFromElement(WebElement element, By locator){
         WebElement ele;
         try {
             ele = findElement (element,locator);
@@ -81,19 +80,20 @@ public class BaseClass {
             return "NOT FOUND";
         }
     }
-    protected List<WebElement> findElements(By locator){
+    protected static List<WebElement> findElements(By locator){
         wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(locator));
         return driver.findElements(locator);
     }
 
-    protected void sendKeys(By locator, String value){
+    protected static void sendKeys(By locator, String value){
         findElement(locator).sendKeys(value);
     }
 
-    protected void click(By locator){
+    protected static void click(By locator){
         findElement(locator).click();
     }
-    protected void click(WebElement element){
+
+    protected static void click(WebElement element){
         ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element);
         element.click();
     }

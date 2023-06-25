@@ -33,10 +33,5 @@ task vncURL(type: Exec){
     commandLine 'echo', 'VNC URL: http://localhost:7900/?autoconnect=1&password=secret&resize=scale'
 }
 
-task dockerStop(type: Exec) {
-    commandLine 'docker-compose', 'down'
-}
-
 tasks.vncURL.dependsOn dockerSetup
 tasks.run.dependsOn vncURL
-tasks.dockerStop.dependsOn run
