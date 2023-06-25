@@ -2,20 +2,10 @@ A containerized base repo for reproducible environments and running selenium-jav
 
 Basic Dependencies:
 ```
-docker
-```
-```
-docker-compose
-```
-```
-gradle
+docker, docker-compose, java
 ```
 
 Usage:
-```
-gradle run
-```
-or
 ```
 ./gradlew run
 ```
