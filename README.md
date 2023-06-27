@@ -13,5 +13,5 @@ Usage:
 Random Joke
 
 ```joke
-How do locomotives know where they're going? Lots of training
+A weasel walks into a bar. The bartender says, "Wow, I've never served a weasel before. What can I get for you?"
 ```
