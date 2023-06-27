@@ -28,5 +28,5 @@ jobs:
             git config --global user.name "circleci"
             git config --global user.email "circleci@circleci.com"
             git commit -am "Verify Selenium success with CI/CD"
-            git push
+
 
