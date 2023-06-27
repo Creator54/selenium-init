@@ -1,18 +1,19 @@
 package dev.creator54;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
-import org.openqa.selenium.*;
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import java.io.*;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.time.Duration;
 import java.util.List;
-import java.util.Set;
 
 public class BaseClass {
     protected static WebDriver driver;
@@ -26,7 +27,7 @@ public class BaseClass {
         driver.manage().window().maximize();
     }
 
-    public static boolean goTo(String url) {
+    public static boolean navigate(String url) {
         try {
             if (!driver.getCurrentUrl().equals(url)) {
                 driver.get(url);
@@ -49,6 +50,7 @@ public class BaseClass {
     protected static String currentURL(){
         return driver.getCurrentUrl();
     }
+
     protected static WebElement findElement (By locator){
         wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
         return driver.findElement(locator);
@@ -95,6 +97,10 @@ public class BaseClass {
 
     protected static void close (){
         driver.close ();
+    }
+
+    protected static void quit(){
+        close ();
         driver.quit ();
     }
 }

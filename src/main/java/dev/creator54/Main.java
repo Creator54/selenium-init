@@ -7,9 +7,9 @@ import java.net.MalformedURLException;
 public class Main extends BaseClass{
     public static void main (String[] args) throws MalformedURLException {
         setup ();
-        goTo ("https://icanhazdadjoke.com/");
+        navigate ("https://icanhazdadjoke.com/");
         String joke = stringFromElement(By.cssSelector("p[class='subtitle']"));
         System.out.println (joke);
-        close();
+        quit ();
     }
 }
