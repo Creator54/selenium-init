@@ -13,5 +13,5 @@ Usage:
 Random Joke
 
 ```joke
-This morning I was wondering where the sun was, but then it dawned on me.
+Why did the man run around his bed? Because he was trying to catch up on his sleep!
 ```
